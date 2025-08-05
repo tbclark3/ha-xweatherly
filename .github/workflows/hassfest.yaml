@@ -7,8 +7,14 @@ on:
     - cron: "0 0 * * *"
 
 jobs:
-  validate:
+  hassfest:
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@v3"
-      - uses: home-assistant/actions/hassfest@master
+      - name: Checkout the repository
+        uses: "actions/checkout@v4"
+
+      - name: Hassfest validation
+        uses: "home-assistant/actions/hassfest@master"
+        with:
+          path: ./custom_components/xweather
+
