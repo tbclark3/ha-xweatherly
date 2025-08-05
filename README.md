@@ -31,7 +31,7 @@ providing current conditions, forecasts, and air quality data from [XWeather.com
 - API key and secret from [XWeather.com](https://xweather.com/)
   - If you have a personal weather station, you may be eligible for a free API key
   - Consider the [Contributor Plan](https://signup.xweather.com/pws-contributor)
-  - **PWS Upload**: If your weather station does not upload data to XWeather, you can use this Home Assistant Blueprint to send your sensor data to the service: [PWS Weather Station Upload](https://community.home-assistant.io/t/pws-weather-station-upload/806415)
+  - **PWS Upload**: If your weather station does not upload data to PWSWeather, you can use this Home Assistant Blueprint to send your sensor data to the service: [PWS Weather Station Upload](https://community.home-assistant.io/t/pws-weather-station-upload/806415)
 
 ---
 
