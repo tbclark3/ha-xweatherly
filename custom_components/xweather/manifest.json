@@ -1,0 +1,13 @@
+{
+  "domain": "xweather",
+  "name": "XWeather",
+  "version": "1.0.0",
+  "config_flow": true,
+  "documentation": "https://github.com/tbclark3/homeassistant-xweather",
+  "issue_tracker": "https://github.com/tbclark3/homeassistant-xweather/issues",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": ["@tbclark3"],
+  "iot_class": "cloud_polling"
+}
+

@@ -1,0 +1,5 @@
+{
+  "name": "XWeather",
+  "domains": ["air_quality", "button", "sensor", "weather"],
+  "homeassistant": "2025.7.0"
+}
