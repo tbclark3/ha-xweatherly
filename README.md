@@ -8,6 +8,7 @@
 
 **XWeather** is a custom integration for [Home Assistant](https://www.home-assistant.io/)
 providing current conditions, forecasts, and air quality data from [XWeather.com](https://xweather.com/).
+XWeather consistently gets very high rankings from [Forecast Advisor](https://forecastadvisor.com).
 
 ---
 
@@ -20,6 +21,7 @@ providing current conditions, forecasts, and air quality data from [XWeather.com
 - Individual sensors for:
   - Temperature, humidity, wind, feels-like temperature
   - Cloud coverage, UV, visibility, precipitation
+  - Selected forecast data for today and tomorrow
 - Air Quality:
   - AQI as primary air quality entity
   - PM2.5, PM10, O3, CO, NO2, SO2 pollutant sensors
@@ -78,5 +80,8 @@ Once configured, you will see:
 - **Air Quality entity**: `air_quality.xweather`
 - **Sensors**: `sensor.xweather_temperature`, `sensor.xweather_humidity`, etc.
 - **Device page** showing all related entities and a **Refresh** button
+
+Daily forecast sensors for today and tomorrow are available for the most common data elements.
+Other elements from both the daily forecast and hourly forecast are available using the weather.get_forecasts action.
 
 ---
