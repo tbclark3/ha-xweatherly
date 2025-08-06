@@ -28,6 +28,7 @@ This integration provides a comprehensive set of entities for your smart home:
 - **Additional Functionality**:
   - A **Refresh** button on the device page for immediate data updates.
   - Full support for Home Assistant's unit system (metric or imperial).
+  - All sensors, including condition, forecast, and AQI, update with each update interval.
   - All entities are grouped under a single **XWeather device**, making them easy to find.
 
 ***
@@ -36,8 +37,8 @@ This integration provides a comprehensive set of entities for your smart home:
 
 To use this integration, you'll need an API key and secret from [XWeather.com](https://xweather.com/).
 
-- **Free Access**: You may be eligible for a free API key if you own a personal weather station (PWS)and sign up for the [Contributor Plan](https://signup.xweather.com/pws-contributor).
-- **PWS Upload**: If your weather station doesn't automatically upload data to PWSWeather, you can use the [PWS Weather Station Upload](https://community.home-assistant.io/t/pws-weather-station-upload/806415) Home Assistant Blueprint to send your sensor data to the service.
+- **Free Access**: You may be eligible for a free API key if you own a personal weather station (PWS) and sign up for the [Contributor Plan](https://signup.xweather.com/pws-contributor).
+- **PWS Upload**: If your personal weather station doesn't automatically upload data to PWSWeather, you can use the [PWS Weather Station Upload](https://community.home-assistant.io/t/pws-weather-station-upload/806415) Home Assistant Blueprint to send your sensor data to the service. 
 
 ***
 
