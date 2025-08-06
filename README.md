@@ -14,10 +14,10 @@
 
 This integration provides a comprehensive set of entities for your smart home:
 
-- **Weather Entity**: A single `weather.xweather` entity that includes:
-  - Current conditions and a 7-day daily forecast
-  - An hourly forecast with up to 24 hours of data
-  - Extended forecast fields like temperature, humidity, pressure, wind, UV index, and precipitation probability/amount
+- **Weather Entity**: A single `weather.xweather` entity that:
+  - Shows current conditions including temperature, humidity, pressure, wind speed, and visibility
+  - Shows a 7-day daily forecast and hourly forecast with 24 hours of data
+  - Is suitable for use on dashboards
 - **Individual Sensors**: Separate sensors are created for key data points, including:
   - Temperature, humidity, wind speed, and "feels-like" temperature
   - Cloud coverage, UV index, visibility, and precipitation
@@ -80,4 +80,4 @@ After configuration, you will find:
 - **Individual sensors**: e.g., `sensor.xweather_temperature`, `sensor.xweather_humidity`
 - A **device page** that groups all these entities and includes a **Refresh** button for manual updates.
 
-All forecast data are available as attributes on the main weather entity. The `weather.get_forecasts` service can be used to access additional elements from the hourly and daily forecasts.
+All standard Home Assistant condition data are available as attributes on the main weather entity. The `weather.get_forecasts` action can be used to access additional elements from the hourly and daily forecasts.
