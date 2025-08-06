@@ -1,4 +1,4 @@
-# XWeather Home Assistant Integration <img src="docs/icon.png" alt="XWeather Icon" width="80" align="right" />
+# XWeather Home Assistant Integration <a href="https://www.xweather.com/" target="_blank" title="Powered by Vaisala Xweather"><img src="https://www.xweather.com/assets/logos/vaisala-xweather-logo-dark.svg" alt="Vaisala Xweather" height="40" align="right" /></a>
 
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Custom%20Component-blue)
 
@@ -42,7 +42,7 @@ providing current conditions, forecasts, and air quality data from [XWeather.com
 
 ### HACS (Recommended)
 
-1. Add this repo as a **Custom Repository** in HACS:  
+1. Add this repo as a **Custom Repository** in HACS:
    `https://github.com/tbclark3/homeassistant-xweather`
 2. Select **Integration** category.
 3. Restart Home Assistant when prompted.
@@ -80,4 +80,3 @@ Once configured, you will see:
 - **Device page** showing all related entities and a **Refresh** button
 
 ---
-
