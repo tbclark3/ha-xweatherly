@@ -1,7 +1,10 @@
-# XWeather Home Assistant Integration
-Custom Home Assistant integration for xweather.com
+# XWeather Home Assistant Integration <img src="docs/icon.png" alt="XWeather Icon" width="80" align="right" />
 
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Custom%20Component-blue)
+
+<p align="center">
+  <img src="docs/logo.png" alt="XWeather Logo" width="400"/>
+</p>
 
 **XWeather** is a custom integration for [Home Assistant](https://www.home-assistant.io/)
 providing current conditions, forecasts, and air quality data from [XWeather.com](https://xweather.com/).
@@ -39,17 +42,19 @@ providing current conditions, forecasts, and air quality data from [XWeather.com
 
 ### HACS (Recommended)
 
-- Add this repo as a **Custom Repository** in HACS:
-  `https://github.com/tbclark3/homeassistant-xweather`
-- Select **Integration** category
-- Restart Home Assistant when prompted.
+1. Add this repo as a **Custom Repository** in HACS:  
+   `https://github.com/tbclark3/homeassistant-xweather`
+2. Select **Integration** category.
+3. Restart Home Assistant when prompted.
 
 ### Manual Installation
 
 1. Copy the `custom_components/xweather` folder to your Home Assistant `custom_components` directory.
 2. Restart Home Assistant.
 
-### Configuration
+---
+
+## Configuration
 
 Once the integration is installed (via HACS or manually):
 
@@ -64,3 +69,15 @@ Once the integration is installed (via HACS or manually):
      - Each update uses 4 API calls (conditions, air quality, hourly and daily forecast)
 
 ---
+
+## Example
+
+Once configured, you will see:
+
+- **Weather entity**: `weather.xweather`
+- **Air Quality entity**: `air_quality.xweather`
+- **Sensors**: `sensor.xweather_temperature`, `sensor.xweather_humidity`, etc.
+- **Device page** showing all related entities and a **Refresh** button
+
+---
+
