@@ -46,7 +46,7 @@ To use this integration, you'll need an API key and secret from [xweather.com](h
 
 #### HACS (Recommended)
 
-1. Go to HACS and add this repository as a **Custom Repository**: `https://github.com/tbclark3/homeassistant-xweather`
+1. Go to HACS and add this repository as a **Custom Repository**: [https://github.com/tbclark3/homeassistant-xweather](https://github.com/tbclark3/homeassistant-xweather)
 2. Select the **Integration** category.
 3. Restart Home Assistant when prompted.
 
@@ -72,7 +72,7 @@ Once the integration is installed, follow these steps:
 
 ***
 
-### Example
+### Entities and Devices
 
 After configuration, you will find:
 
