@@ -140,7 +140,6 @@ class XWeatherWeather(CoordinatorEntity,WeatherEntity):
     
         return ICON_MAP.get(code, "cloudy")
 
-    # Corrected helper function
     def _get_forecast_value(self, p, key_c, key_f):
         """Get the correct forecast value based on user's units."""
         unit = self._hass.config.units.temperature_unit

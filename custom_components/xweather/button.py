@@ -20,9 +20,13 @@ class XWeatherRefreshButton(CoordinatorEntity, ButtonEntity):
         self._attr_name = f"{entry.data.get('name', DEFAULT_NAME)} Refresh"
         self._attr_unique_id = f"{DOMAIN}_{entry.entry_id}_refresh"
         self._attr_icon = "mdi:refresh"
-        self._attr_device_info = {
+        
+    @property
+    def device_info(self):
+        """Return the device info."""
+        return {
             "identifiers": {(DOMAIN, self.entry.entry_id)},
-            "name": DEFAULT_NAME,
+            "name": self.entry.data.get('name', DEFAULT_NAME),
             "manufacturer": DEFAULT_NAME,
             "model": "API",
             "entry_type": "service",
@@ -31,3 +35,4 @@ class XWeatherRefreshButton(CoordinatorEntity, ButtonEntity):
     async def async_press(self) -> None:
         """Handle the button press."""
         await self.coordinator.async_request_refresh()
+
