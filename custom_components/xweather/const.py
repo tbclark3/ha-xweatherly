@@ -6,7 +6,7 @@ CONF_CLIENT_ID = "client_id"
 CONF_CLIENT_SECRET = "client_secret"
 CONF_UPDATE_INTERVAL = "update_interval"
 
-DEFAULT_NAME = "xweather"
+DEFAULT_NAME = "Xweather"
 DEFAULT_UPDATE_INTERVAL = 60
 
 API_BASE = "https://data.api.xweather.com"
