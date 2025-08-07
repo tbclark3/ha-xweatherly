@@ -64,8 +64,8 @@ Once the integration is installed, follow these steps:
 1. Navigate to **Settings > Devices & Services > Add Integration**.
 2. Search for and select **XWeather**.
 3. A configuration form will appear where you'll need to enter the following details:
-   - **Client ID**
-   - **Client Secret**
+   - **Client ID** (your XWeather API client ID)
+   - **Client Secret** (your XWeather API client secret)
    - **Latitude / Longitude** (defaults to your Home Assistant location)
    - **Name**: The base name for your weather and sensor entities (default is `xweather`)
    - **Update interval**: How often the integration will poll the API in minutes (default is 60). Each update uses four API calls (conditions, air quality, hourly, and daily forecast).
