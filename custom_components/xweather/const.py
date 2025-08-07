@@ -1,3 +1,5 @@
+"""Constants for the Xweather integration."""
+
 DOMAIN = "xweather"
 
 PLATFORMS = ["weather", "sensor", "air_quality", "button"]
