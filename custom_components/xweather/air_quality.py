@@ -7,7 +7,7 @@ from homeassistant.const import (
 )
 from homeassistant.helpers.entity import EntityCategory
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
-from .const import DOMAIN
+from .const import DOMAIN, DEFAULT_NAME
 
 
 async def async_setup_entry(hass, entry, async_add_entities):
@@ -23,15 +23,17 @@ class XWeatherAirQuality(CoordinatorEntity, AirQualityEntity):
     def __init__(self, coordinator, entry):
         super().__init__(coordinator)
         self.entry = entry
-        self._attr_name = f"{entry.data.get('name','xweather')} Air Quality"
+        # Correctly uses DEFAULT_NAME as a fallback
+        self._attr_name = f"{entry.data.get('name', DEFAULT_NAME)} Air Quality"
         self._attr_unique_id = f"{DOMAIN}_{entry.entry_id}_airquality"
 
     @property
     def device_info(self):
         return {
             "identifiers": {(DOMAIN, self.entry.entry_id)},
-            "name": self.entry.data.get("name", "XWeather"),
-            "manufacturer": "XWeather",
+            # Hardcodes the name to the default as requested
+            "name": DEFAULT_NAME,
+            "manufacturer": DEFAULT_NAME,
             "model": "API",
             "entry_type": "service",
         }

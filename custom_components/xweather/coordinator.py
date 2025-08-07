@@ -9,6 +9,7 @@ from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
 from .const import (
     DOMAIN,
+    DEFAULT_NAME,
     API_BASE,
     CONF_CLIENT_ID,
     CONF_CLIENT_SECRET,

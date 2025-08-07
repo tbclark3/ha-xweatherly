@@ -15,8 +15,10 @@ API_BASE = "https://data.api.xweather.com"
 ICON_MAP = {
     # Cloud-only codes
     "CL": "sunny",
+    "CL-N": "clear-night",
     "FW": "partlycloudy",
     "SC": "partlycloudy",
+    "SC-N": "partlycloudy-night",
     "BK": "cloudy",
     "OV": "cloudy",
     # Precipitation and weather codes

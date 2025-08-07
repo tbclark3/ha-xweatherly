@@ -10,7 +10,7 @@ from homeassistant.const import (
     UnitOfSpeed,
 )
 from homeassistant.helpers.entity import EntityCategory
-from .const import DOMAIN
+from .const import DOMAIN, DEFAULT_NAME
 
 SENSORS = [
     ("tempC", "Temperature", UnitOfTemperature.CELSIUS),
@@ -321,8 +321,8 @@ class XWeatherBaseSensor(CoordinatorEntity, SensorEntity):
     def device_info(self):
         return {
             "identifiers": {(DOMAIN, self.entry.entry_id)},
-            "name": self.entry.data.get("name", "XWeather"),
-            "manufacturer": "XWeather",
+            "name": self.entry.data.get("name", DEFAULT_NAME),
+            "manufacturer": DEFAULT_NAME,
             "model": "API",
             "entry_type": "service",
         }
@@ -338,7 +338,7 @@ class XWeatherSensor(XWeatherBaseSensor):
         self.name_field = name
         self._unit_metric = unit
         self._unit_imperial = _alt_unit(unit)
-        self._attr_name = f"{entry.data.get('name','xweather')} {name}"
+        self._attr_name = f"{entry.data.get('name', DEFAULT_NAME)} {name}"
         self._attr_unique_id = f"{DOMAIN}_{entry.entry_id}_{self.key_override}"
 
     def _sel(self, metric, imperial):
@@ -375,7 +375,7 @@ class XWeatherPollutantSensor(XWeatherBaseSensor):
     def __init__(self, coordinator, entry, pollutant_key, name, unit, key_override=None):
         super().__init__(coordinator, entry)
         self.pollutant_key = pollutant_key
-        self._attr_name = f"{entry.data.get('name','xweather')} {name}"
+        self._attr_name = f"{entry.data.get('name', DEFAULT_NAME)} {name}"
         self._attr_unique_id = f"{DOMAIN}_{entry.entry_id}_{key_override or pollutant_key}"
         self._attr_native_unit_of_measurement = unit
 
@@ -422,7 +422,7 @@ class XWeatherAqiSensor(XWeatherBaseSensor):
 
     def __init__(self, coordinator, entry):
         super().__init__(coordinator, entry)
-        self._attr_name = f"{entry.data.get('name', 'xweather')} Air Quality Index"
+        self._attr_name = f"{entry.data.get('name', DEFAULT_NAME)} Air Quality Index"
         self._attr_unique_id = f"{DOMAIN}_{entry.entry_id}_aqi"
         self._attr_icon = "mdi:air-filter"
 
@@ -453,7 +453,7 @@ class XWeatherForecastSensor(XWeatherBaseSensor):
         self._unit_metric = unit_metric
         self._unit_imperial = unit_imperial
 
-        self._attr_name = f"{entry.data.get('name', 'xweather')} {name}"
+        self._attr_name = f"{entry.data.get('name', DEFAULT_NAME)} {name}"
         self._attr_unique_id = f"{DOMAIN}_{entry.entry_id}_{name.replace(' ', '_').lower()}"
 
     def _sel(self, metric, imperial):
