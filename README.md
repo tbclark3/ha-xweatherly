@@ -68,7 +68,7 @@ Once the integration is installed, follow these steps:
    - **Client Secret** (your Xweather API client secret)
    - **Latitude / Longitude** (defaults to your Home Assistant location)
    - **Name**: The base name for your weather and sensor entities (default is `Xweather`)
-   - **Update interval**: How often the integration will poll the API in minutes (default is 60). Each update uses four API calls (conditions, air quality, hourly, and daily forecast).
+   - **Update interval**: How often the integration will poll the API in minutes (default is 60). Each update makes four API calls (conditions, air quality, hourly, and daily forecast).  That does not necessarily translate into the number of API calls registered by Xweather because they apply multipliers based on several factors.  As configured by default, this integration makes 4 API calls per hour, but, because of multipliers, that is billed as 12 API calls by Xweather.
 
 ***
 
