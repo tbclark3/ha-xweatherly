@@ -3,7 +3,7 @@
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Custom%20Component-blue)
 
 <p align="center">
-  <img src="docs/logo.png" alt="Xweather Logo" width="400"/>
+  <img src="images/logo.png" alt="Xweather Integration Logo" width="400"/>
 </p>
 
 **Xweather** is a custom integration for [Home Assistant](https://www.home-assistant.io/) that provides detailed weather, forecast, and air quality data from [Xweather.com](https://xweather.com/). The service is highly regarded for its accuracy, consistently receiving high rankings from [Forecast Advisor](https://forecastadvisor.com).
