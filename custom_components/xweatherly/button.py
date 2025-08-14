@@ -7,11 +7,11 @@ from .const import DOMAIN, DEFAULT_NAME
 async def async_setup_entry(hass, entry, async_add_entities):
     """Set up the button platform."""
     coordinator = hass.data[DOMAIN][entry.entry_id]
-    async_add_entities([XWeatherRefreshButton(coordinator, entry)])
+    async_add_entities([XweatherlyRefreshButton(coordinator, entry)])
 
 
-class XWeatherRefreshButton(CoordinatorEntity, ButtonEntity):
-    """A button to manually refresh the XWeather data."""
+class XweatherlyRefreshButton(CoordinatorEntity, ButtonEntity):
+    """A button to manually refresh the Xweatherly data."""
 
     def __init__(self, coordinator, entry):
         """Initialize the button."""

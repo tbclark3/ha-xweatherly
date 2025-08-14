@@ -1,6 +1,6 @@
-"""Constants for the Xweather integration."""
+"""Constants for the Xweatherly integration."""
 
-DOMAIN = "xweather"
+DOMAIN = "xweatherly"
 
 PLATFORMS = ["weather", "sensor", "air_quality", "button"]
 
@@ -8,12 +8,12 @@ CONF_CLIENT_ID = "client_id"
 CONF_CLIENT_SECRET = "client_secret"
 CONF_UPDATE_INTERVAL = "update_interval"
 
-DEFAULT_NAME = "Xweather"
+DEFAULT_NAME = "Xweatherly"
 DEFAULT_UPDATE_INTERVAL = 60
 
 API_BASE = "https://data.api.xweather.com"
 
-# Map XWeather coded conditions to Home Assistant weather conditions/icons
+# Map Xweather coded conditions to Home Assistant weather conditions/icons
 ICON_MAP = {
     # Cloud codes
     "CL": "sunny",

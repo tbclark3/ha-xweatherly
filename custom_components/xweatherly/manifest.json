@@ -1,0 +1,12 @@
+{
+  "domain": "xweatherly",
+  "name": "Xweatherly",
+  "codeowners": ["@tbclark3"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/tbclark3/ha-xweatherly",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/tbclark3/ha-xweatherly/issues",
+  "requirements": [],
+  "version": "1.1.0"
+}

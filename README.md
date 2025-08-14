@@ -1,12 +1,12 @@
-# Xweather Home Assistant Integration <a href="https://www.xweather.com/" target="_blank" title="Powered by Vaisala Xweather"><img src="images/xweather_logo.png" alt="Vaisala Xweather" height="40" align="right" /></a>
+# Xweatherly Home Assistant Integration <a href="https://www.xweather.com/" target="_blank" title="Powered by Vaisala Xweather"><img src="images/xweather_logo.png" alt="Vaisala Xweather" height="40" align="right" /></a>
 
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Custom%20Component-blue)
 
 <p align="center">
-  <img src="logo.png" alt="Xweather Integration Logo" width="400"/>
+  <img src="logo.png" alt="Xweatherly Integration Logo" width="400"/>
 </p>
 
-**Xweather** is a custom integration for [Home Assistant](https://www.home-assistant.io/) that provides detailed weather, forecast, and air quality data from [Xweather.com](https://xweather.com/). The service is highly regarded for its accuracy, consistently receiving high rankings from [Forecast Advisor](https://forecastadvisor.com).
+**Xweatherly** is a custom integration for [Home Assistant](https://www.home-assistant.io/) that provides detailed weather, forecast, and air quality data from [Xweather.com](https://xweather.com/). The service is highly regarded for its accuracy, consistently receiving high rankings from [Forecast Advisor](https://forecastadvisor.com).
 
 ***
 
@@ -14,7 +14,7 @@
 
 This integration provides a comprehensive set of entities for your smart home:
 
-- **Weather Entity**: A single `weather.Xweather` entity that:
+- **Weather Entity**: A single `weather.xweatherly` entity that:
   - Shows current conditions including temperature, humidity, pressure, wind speed, and visibility
   - Shows a 7-day daily forecast and hourly forecast with 24 hours of data
   - Is suitable for use on dashboards
@@ -29,7 +29,7 @@ This integration provides a comprehensive set of entities for your smart home:
   - A **Refresh** button on the device page for immediate data updates.
   - Full support for Home Assistant's unit system (metric or imperial).
   - All sensors, including condition, forecast, and AQI, update with each update interval.
-  - All entities are grouped under a single **Xweather device**, making them easy to find.
+  - All entities are grouped under a single **xweatherly device**, making them easy to find.
 
 ***
 
@@ -46,12 +46,12 @@ To use this integration, you'll need an API key and secret from [xweather.com](h
 
 #### HACS (Recommended)
 
-1. Go to HACS, search for **Xweather**, and select **DOWNLOAD**.
+1. Go to HACS, search for **Xweatherly**, and select **DOWNLOAD**.
 2. Restart Home Assistant when prompted.
 
 #### Manual Installation
 
-1. Copy the `custom_components/xweather` folder into your Home Assistant's `custom_components` directory.
+1. Copy the `custom_components/xweatherly` folder into your Home Assistant's `custom_components` directory.
 2. Restart Home Assistant.
 
 ***
@@ -61,12 +61,12 @@ To use this integration, you'll need an API key and secret from [xweather.com](h
 Once the integration is installed, follow these steps:
 
 1. Navigate to **Settings > Devices & Services > Add Integration**.
-2. Search for and select **Xweather**.
+2. Search for and select **Xweatherly**.
 3. A configuration form will appear where you'll need to enter the following details:
    - **Client ID** (your Xweather API client ID)
    - **Client Secret** (your Xweather API client secret)
    - **Latitude / Longitude** (defaults to your Home Assistant location)
-   - **Name**: The base name for your weather and sensor entities (default is `Xweather`)
+   - **Name**: The base name for your weather and sensor entities (default is `Xweatherly`)
    - **Update interval**: How often the integration will poll the API in minutes (default is 60). Each update makes four API calls (conditions, air quality, hourly, and daily forecast).  That does not necessarily translate into the number of API calls registered by Xweather because they apply multipliers based on several factors.  As configured by default, this integration makes 4 API calls per hour, but, because of multipliers, that is billed as 12 API calls by Xweather.
 
 ***

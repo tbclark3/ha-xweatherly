@@ -6,16 +6,16 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 
 from .const import DOMAIN, PLATFORMS
-from .coordinator import XWeatherDataCoordinator
+from .coordinator import XweatherlyDataCoordinator
 
 _LOGGER = logging.getLogger(__name__)
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
-    """Set up XWeather from a config entry."""
+    """Set up Xweatherly from a config entry."""
     hass.data.setdefault(DOMAIN, {})
 
-    coordinator = XWeatherDataCoordinator(hass, entry)
+    coordinator = XweatherlyDataCoordinator(hass, entry)
     await coordinator.async_config_entry_first_refresh()
 
     hass.data[DOMAIN][entry.entry_id] = coordinator
@@ -27,7 +27,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
-    """Unload a XWeather config entry."""
+    """Unload a Xweatherly config entry."""
     unload_ok = await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
     if unload_ok:
         hass.data[DOMAIN].pop(entry.entry_id)

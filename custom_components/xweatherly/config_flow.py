@@ -14,8 +14,8 @@ from .const import (
 )
 
 
-class XWeatherConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
-    """Handle a config flow for XWeather."""
+class XweatherlyConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+    """Handle a config flow for Xweatherly."""
 
     VERSION = 1
 

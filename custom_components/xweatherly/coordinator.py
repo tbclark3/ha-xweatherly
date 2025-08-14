@@ -29,8 +29,8 @@ POLLUTANT_KEY_MAP = {
 }
 
 
-class XWeatherDataCoordinator(DataUpdateCoordinator):
-    """Class to manage fetching and processing XWeather data."""
+class XWeatherlyDataCoordinator(DataUpdateCoordinator):
+    """Class to manage fetching and processing XWeatherly data."""
 
     def __init__(self, hass: HomeAssistant, entry):
         self.hass = hass
@@ -51,7 +51,7 @@ class XWeatherDataCoordinator(DataUpdateCoordinator):
         )
 
     async def _async_update_data(self):
-        """Fetch and normalize XWeather data."""
+        """Fetch and normalize XWeatherly data."""
         try:
             conditions = await self._fetch("conditions")
             airquality = await self._fetch("airquality")
@@ -82,10 +82,10 @@ class XWeatherDataCoordinator(DataUpdateCoordinator):
             }
 
         except Exception as err:
-            raise UpdateFailed(f"Error fetching XWeather data: {err}") from err
+            raise UpdateFailed(f"Error fetching XWeatherly data: {err}") from err
 
     async def _fetch(self, endpoint: str, extra_params=None):
-        """Fetch data from an XWeather API endpoint."""
+        """Fetch data from an XWeatherly API endpoint."""
         params = {
             "format": "json",
             "client_id": self.client_id,

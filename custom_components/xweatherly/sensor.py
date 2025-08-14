@@ -62,7 +62,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
 
     for key, name, unit in SENSORS:
         entities.append(
-            XWeatherSensor(
+            XweatherlySensor(
                 coordinator,
                 entry,
                 key,
@@ -76,7 +76,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
     for key, display in POLLUTANTS.items():
         safe_key = key.replace(".", "").replace(" ", "_").lower()
         entities.append(
-            XWeatherPollutantSensor(
+            XweatherlyPollutantSensor(
                 coordinator,
                 entry,
                 key,
@@ -86,10 +86,10 @@ async def async_setup_entry(hass, entry, async_add_entities):
             )
         )
 
-    entities.append(XWeatherAqiSensor(coordinator, entry))
+    entities.append(XweatherlyAqiSensor(coordinator, entry))
 
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted High Temperature Today",
@@ -101,7 +101,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Low Temperature Today",
@@ -113,7 +113,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Rain Amount Today",
@@ -125,7 +125,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Rain Probability Today",
@@ -137,7 +137,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Wind Speed Today",
@@ -149,7 +149,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Humidity Today",
@@ -161,7 +161,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Average Temperature Today",
@@ -173,7 +173,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Snowfall Today",
@@ -185,7 +185,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Cloud Cover Today",
@@ -198,7 +198,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
     )
 
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted High Temperature Tomorrow",
@@ -210,7 +210,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Low Temperature Tomorrow",
@@ -222,7 +222,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Rain Amount Tomorrow",
@@ -234,7 +234,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Rain Probability Tomorrow",
@@ -246,7 +246,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Wind Speed Tomorrow",
@@ -258,7 +258,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Humidity Tomorrow",
@@ -270,7 +270,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Average Temperature Tomorrow",
@@ -282,7 +282,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Snowfall Tomorrow",
@@ -294,7 +294,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         )
     )
     entities.append(
-        XWeatherForecastSensor(
+        XweatherlyForecastSensor(
             coordinator,
             entry,
             name="Predicted Cloud Cover Tomorrow",
@@ -310,8 +310,8 @@ async def async_setup_entry(hass, entry, async_add_entities):
     async_add_entities(entities, True)
 
 
-class XWeatherBaseSensor(CoordinatorEntity, SensorEntity):
-    """Base class for XWeather sensors with device info."""
+class XweatherlyBaseSensor(CoordinatorEntity, SensorEntity):
+    """Base class for Xweatherly sensors with device info."""
 
     def __init__(self, coordinator, entry):
         super().__init__(coordinator)
@@ -327,7 +327,7 @@ class XWeatherBaseSensor(CoordinatorEntity, SensorEntity):
             "entry_type": "service",
         }
 
-class XWeatherSensor(XWeatherBaseSensor):
+class XweatherlySensor(XweatherlyBaseSensor):
     """Standard weather sensor with dynamic unit selection."""
 
     def __init__(self, coordinator, entry, key, name, unit, source, key_override=None):
@@ -369,8 +369,8 @@ class XWeatherSensor(XWeatherBaseSensor):
     def native_unit_of_measurement(self):
         return self._sel(self._unit_metric, self._unit_imperial)
 
-class XWeatherPollutantSensor(XWeatherBaseSensor):
-    """Pollutant sensor for XWeather."""
+class XweatherlyPollutantSensor(XweatherlyBaseSensor):
+    """Pollutant sensor for Xweatherly."""
 
     def __init__(self, coordinator, entry, pollutant_key, name, unit, key_override=None):
         super().__init__(coordinator, entry)
@@ -415,8 +415,8 @@ class XWeatherPollutantSensor(XWeatherBaseSensor):
                 )
         return None
 
-class XWeatherAqiSensor(XWeatherBaseSensor):
-    """AQI sensor for XWeather."""
+class XweatherlyAqiSensor(XweatherlyBaseSensor):
+    """AQI sensor for Xweatherly."""
 
     _attr_native_unit_of_measurement = None
 
@@ -441,8 +441,8 @@ class XWeatherAqiSensor(XWeatherBaseSensor):
         return periods[0].get("aqi") if periods else None
 
 
-class XWeatherForecastSensor(XWeatherBaseSensor):
-    """Forecast sensor for XWeather with dynamic unit selection."""
+class XweatherlyForecastSensor(XweatherlyBaseSensor):
+    """Forecast sensor for Xweatherly with dynamic unit selection."""
 
     def __init__(self, coordinator, entry, name, key_metric, key_imperial, unit_metric, unit_imperial, day_offset):
         super().__init__(coordinator, entry)

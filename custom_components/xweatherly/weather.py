@@ -10,12 +10,12 @@ from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from .const import DOMAIN, ICON_MAP, DEFAULT_NAME
 
 async def async_setup_entry(hass, entry, async_add_entities):
-    """Set up the XWeather weather entity."""
+    """Set up the Xweatherly weather entity."""
     coordinator = hass.data[DOMAIN][entry.entry_id]
-    async_add_entities([XWeatherWeather(coordinator, entry)], True)
+    async_add_entities([XweatherlyWeather(coordinator, entry)], True)
 
-class XWeatherWeather(CoordinatorEntity,WeatherEntity):
-    """XWeather main weather entity."""
+class XweatherlyWeather(CoordinatorEntity,WeatherEntity):
+    """Xweatherly main weather entity."""
 
     _attr_supported_features = WeatherEntityFeature.FORECAST_HOURLY | WeatherEntityFeature.FORECAST_DAILY
 

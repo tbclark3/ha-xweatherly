@@ -11,24 +11,24 @@ from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from .const import DOMAIN, DEFAULT_NAME
 
 async def async_setup_entry(hass, entry, async_add_entities):
-    """Set up the XWeather Air Quality entities."""
+    """Set up the Xweatherly Air Quality entities."""
     coordinator = hass.data[DOMAIN][entry.entry_id]
     async_add_entities(
         [
-            XWeatherAirQuality(coordinator, entry),
-            XWeatherDominantPollutantSensor(coordinator, entry),
+            XweatherlyAirQuality(coordinator, entry),
+            XweatherlyDominantPollutantSensor(coordinator, entry),
         ],
         True,
     )
 
 
-class XWeatherAirQuality(CoordinatorEntity, AirQualityEntity):
-    """XWeather Air Quality Entity."""
+class XweatherlyAirQuality(CoordinatorEntity, AirQualityEntity):
+    """Xweatherly Air Quality Entity."""
 
     _attr_entity_category = EntityCategory.DIAGNOSTIC
 
     def __init__(self, coordinator, entry):
-        """Initialize the XWeather Air Quality entity."""
+        """Initialize the Xweatherly Air Quality entity."""
         super().__init__(coordinator)
         self.entry = entry
 
@@ -69,7 +69,7 @@ class XWeatherAirQuality(CoordinatorEntity, AirQualityEntity):
     @property
     def attribution(self):
         """Return the attribution."""
-        return "Data provided by XWeather"
+        return "Data provided by Xweather"
 
     @property
     def extra_state_attributes(self):
@@ -177,14 +177,14 @@ class XWeatherAirQuality(CoordinatorEntity, AirQualityEntity):
             or pollutant_data.get("value")
         )
 
-class XWeatherDominantPollutantSensor(CoordinatorEntity, SensorEntity):
-    """XWeather Dominant Pollutant Sensor Entity."""
+class XweatherlyDominantPollutantSensor(CoordinatorEntity, SensorEntity):
+    """Xweatherly Dominant Pollutant Sensor Entity."""
 
     _attr_device_class = None
     _attr_entity_category = EntityCategory.DIAGNOSTIC
 
     def __init__(self, coordinator, entry):
-        """Initialize the XWeather Dominant Pollutant sensor."""
+        """Initialize the Xweatherly Dominant Pollutant sensor."""
         super().__init__(coordinator)
         self.entry = entry
         
