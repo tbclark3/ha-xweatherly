@@ -1,4 +1,4 @@
-# Xweatherly Home Assistant Integration <a href="https://www.xweather.com/" target="_blank" title="Powered by Vaisala Xweather"><img src="images/xweather_logo.png" alt="Vaisala Xweather" height="40" align="right" /></a>
+# Xweatherly Home Assistant Integration <a href="https://www.xweather.com/" target="_blank" title="Powered by Vaisala Xweather"><img src="https://github.com/tbclark3/ha-xweatherly/blob/main/images/xweather_logo.png" alt="Vaisala Xweather" height="40" align="right" /></a>
 
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Custom%20Component-blue)
 
