@@ -75,9 +75,9 @@ Once the integration is installed, follow these steps:
 
 After configuration, you will find:
 
-- A **Weather entity**: `weather.xweather`
-- An **Air Quality entity**: `air_quality.xweather_air_quality`
-- **Individual sensors**: e.g., `sensor.xweather_temperature`, `sensor.xweather_humidity`
+- A **Weather entity**: `weather.xweatherly`
+- An **Air Quality entity**: `air_quality.xweatherly_air_quality`
+- **Individual sensors**: e.g., `sensor.xweatherly_temperature`, `sensor.xweatherly_humidity`
 - A **device page** that groups all these entities and includes a **Refresh** button for manual updates.
 
 All standard Home Assistant condition data are available as attributes on the main weather entity. The `weather.get_forecasts` action can be used to access additional elements from the hourly and daily forecasts.
