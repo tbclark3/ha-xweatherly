@@ -3,7 +3,7 @@
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Custom%20Component-blue)
 
 <p align="center">
-  <img src="logo.png" alt="Xweatherly Integration Logo" width="400"/>
+  <img src="https://github.com/tbclark3/ha-xweatherly/blob/main/logo.png" alt="Xweatherly Integration Logo" width="400"/>
 </p>
 
 **Xweatherly** is a custom integration for [Home Assistant](https://www.home-assistant.io/) that provides detailed weather, forecast, and air quality data from [Xweather.com](https://xweather.com/). The service is highly regarded for its accuracy, consistently receiving high rankings from [Forecast Advisor](https://forecastadvisor.com).
