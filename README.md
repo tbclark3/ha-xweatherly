@@ -81,3 +81,13 @@ After configuration, you will find:
 - A **device page** that groups all these entities and includes a **Refresh** button for manual updates.
 
 All standard Home Assistant condition data are available as attributes on the main weather entity. The `weather.get_forecasts` action can be used to access additional elements from the hourly and daily forecasts.
+
+***
+
+### Community Involvement
+
+Community involvement is welcome.
+
+- If you've found a bug, please open an issue describing the problem and the steps to reproduce it.
+- For new feature ideas, please open an issue to discuss it before you start coding.
+
