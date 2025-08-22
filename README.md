@@ -89,5 +89,5 @@ All standard Home Assistant condition data are available as attributes on the ma
 Community involvement is welcome.
 
 - If you've found a bug, please open an issue describing the problem and the steps to reproduce it.
-- For new feature ideas, please open an issue to discuss it before you start coding.
+- For new feature ideas, please open an issue to discuss it before you submit a pull request.
 
